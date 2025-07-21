@@ -45,9 +45,9 @@ class knife4jConfig {
         return OpenAPI()
             .info(
                 Info()
-                    .title("彩票小工具")
+                    .title("kotlin demo")
                     .version("1.0.0")
-                    .description("彩票小工具")
+                    .description("kotlin demo")
                     .termsOfService("http://doc.xiaominfo.com")
                     .license(
                         License().name("Apache 2.0")
