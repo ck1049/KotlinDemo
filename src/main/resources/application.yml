@@ -1,0 +1,48 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: KotlinDemo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3308/test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 10
+      min-idle: 5
+      max-active: 100
+      max-wait: 10000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      filter:
+        stat:
+          log-slow-sql: on
+          slow-sql-millis: 1000
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.loafer.kotlin.entity
+  configuration:
+    map-underscore-to-camel-case: on
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-prefix: [Mybatis]
+
+# springdoc-openapi????
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+    enabled: true
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.loafer.kotlin.controller
+  default-flat-param-object: true
