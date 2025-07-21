@@ -1,6 +1,7 @@
 package com.loafer.kotlin.config
 
 import io.swagger.v3.oas.models.OpenAPI
+import io.swagger.v3.oas.models.info.Contact
 import io.swagger.v3.oas.models.info.Info
 import io.swagger.v3.oas.models.info.License
 import io.swagger.v3.oas.models.tags.Tag
@@ -47,6 +48,7 @@ class knife4jConfig {
                 Info()
                     .title("kotlin demo")
                     .version("1.0.0")
+                    .contact(Contact().name("loafer"))
                     .description("kotlin demo")
                     .termsOfService("http://doc.xiaominfo.com")
                     .license(
